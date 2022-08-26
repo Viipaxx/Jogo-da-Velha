@@ -90,8 +90,11 @@ def jogar(): # Modifique para o robô começar
 
         # sleep(0.7)
         opc = int(input('Escolha uma opção: '))
+        while opc < 1 or opc > 9:
+            opc = int(input('Escolha uma opção válida: '))
+            
         # opc = randint(1, 9)
-        while op[opc - 1] == '\033[33mX\033[m' or op[opc - 1] == '\033[32mO\033[m' or opc < 1 or opc > 9:
+        while op[opc - 1] == '\033[33mX\033[m' or op[opc - 1] == '\033[32mO\033[m':
             opc = int(input('Erro! Escolha outra opção: '))
             # opc = randint(1, 9)
         jogada(opc)
